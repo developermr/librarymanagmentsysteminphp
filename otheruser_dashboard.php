@@ -53,15 +53,15 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
             <a href="index.php"><Button> LOGOUT</Button></a>
         </div>
         <div class="leftinnerdiv">
-            <Button class="greenbtn" onclick="openpart('myaccount')"> My Account</Button>
-            <Button class="greenbtn" onclick="openpart('requestbook')"> Request Book</Button>
-            <Button class="greenbtn" onclick="openpart('issuereport')"> Book Report</Button>
+            <Button class="greenbtn btnNav" onclick="openpart('myaccount')"> My Account</Button>
+            <Button class="greenbtn btnNav" onclick="openpart('requestbook')"> Request Book</Button>
+            <Button class="greenbtn btnNav" onclick="openpart('issuereport')"> Book Report</Button>
         </div>
 
 
         <div class="rightinnerdiv">   
             <div id="myaccount" class="innerright portion" style="<?php  if(!empty($_REQUEST['returnid'])){ echo "display:none";} else {echo ""; }?>">
-                <Button class="greenbtn" >My Account</Button>
+                <h1 class='table_head'>My account</h1>
                 <div class='info_other_acc'>
                     <div>
                         <div>
@@ -81,7 +81,7 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
 
         <div class="rightinnerdiv">   
         <div id="issuereport" class="innerright portion" style="<?php  if(!empty($_REQUEST['returnid'])){ echo "display:none";} else {echo "display:none"; }?>">
-        <Button class="greenbtn" >ISSUE RECORD</Button>
+        <h1 class='table_head'>Issue record</h1>
 
         <?php
 
@@ -91,8 +91,7 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
         $u->getissuebook($userloginid);
         $recordset=$u->getissuebook($userloginid);
 
-        $table="<table style='font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;'><tr><th style='  border: 1px solid #ddd;
-        padding: 8px;'>Name</th><th>Book Name</th><th>Issue Date</th><th>Return Date</th><th>Fine</th></th><th>Return</th></tr>";
+        $table="<table><tr><th>Name</th><th>Book Name</th><th>Issue Date</th><th>Return Date</th><th>Fine</th></th><th>Return</th></tr>";
 
         foreach($recordset as $row){
             $table.="<tr>";
@@ -133,7 +132,8 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
 
         <div class="rightinnerdiv">   
         <div id="requestbook" class="innerright portion" style="<?php  if(!empty($_REQUEST['returnid'])){ $returnid=$_REQUEST['returnid'];echo "display:none";} else {echo "display:none"; }?>">
-        <Button class="greenbtn" >Request Book</Button>
+        <h1 class='table_head'>Request Book</h1>
+        
 
         <?php
         $u=new data;
@@ -141,7 +141,7 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
         $u->getbookissue();
         $recordset=$u->getbookissue();
 
-        $table="<table style='font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;'><tr>
+        $table="<table><tr>
         <th>Image</th><th>Book Name</th><th>Book Authour</th><th>branch</th><th>price</th></th><th>Request Book</th></tr>";
 
         foreach($recordset as $row){

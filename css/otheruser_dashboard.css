@@ -12,7 +12,7 @@
 .row > h1{
     color: white;
     font-size: 35px;
-    text-shadow: 2px 2px 5px black;
+    text-shadow: 5px 5px 5px black;
 }
 
 .innerdiv {
@@ -20,6 +20,7 @@
     width: min(800px,90%);
     margin: auto;
     margin-top: 50px;
+    /* border: 1px solid red; */
 }
 input{
     margin-left:20px;
@@ -37,6 +38,7 @@ input{
 
 .innerright {
     background-color: rgba(255, 255, 255, 0.308);
+    padding: 10px;
 }
 
 .greenbtn {
@@ -44,12 +46,19 @@ input{
     color: white;
     width: 95%;
     height: 40px;
-    margin-top: 8px;
+    /* margin-top: 8px; */
     border: none;
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: 0.5s;
     cursor: pointer;
+}
+.btnNav{
+    /* border: 1px solid; */
+    margin-right: 10px;
+}
+.btnNav:nth-child(2),.btnNav:nth-child(3){
+    margin-top: 20px;
 }
 .greenbtn:hover,.greenbtn:focus{
     background-color: #033674;
@@ -60,17 +69,11 @@ input{
     color: white;
     font-size: large;
 }
-
-th{
-    background-color: orange;
-    color: black;
-}
-td{
-    background-color: #fed8b1;
-    color: black;
-}
-td, a{
-    color:black;
+.table_head{
+    /* border: 1px solid; */
+    color: white;
+    background-color: #033674;
+    padding: 10px 5px;
 }
 
 /* ====================== NEW CSS */
@@ -89,11 +92,17 @@ td, a{
 }
 .logoutBtn > a {
     /* border: 1px solid; */
-    padding: 10px 0px;
+    padding: 5px 0px;
 }
 .logoutBtn > a > button{
     border: none;
-    padding: 5px;
+    padding: 8px;
+    cursor: pointer;
+    background-color: #ff2c2cd5;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bolder;
 }
 .info_other_acc{
     /* border: 1px solid; */
@@ -115,4 +124,46 @@ td, a{
 .info_other_acc > div:nth-child(2) img{
     width: 200px;
     margin: 20px;
+}
+/* ===============tableTwo */
+table{
+    text-transform: uppercase;
+    background: none;
+    border-collapse: collapse;
+    width: 100%;
+}
+table th {
+    /* color: red; */
+    font-size: 12px;
+    padding: 10px;
+    background-color: #033674;
+    color: white;
+}
+table td{
+    font-size: 12px;
+}
+td{
+    /* border: 1px solid; */
+    padding: 0px 7px;
+}
+table td img{
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid; */
+    margin: 10px;
+    border-radius: 10px;
+}
+
+table button {
+    border: none;
+    background-color: rgb(15, 111, 189);
+    color: white;
+    padding: 7px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+table button:hover{
+    background-color: #033674;
 }
