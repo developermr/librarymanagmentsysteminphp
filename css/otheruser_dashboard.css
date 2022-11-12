@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: tahoma;
+}
+.innerright,label {
+    font-weight:bold;
+}
+.row{
+    margin-bottom: 100px;
+}
+.row > h1{
+    color: white;
+    font-size: 35px;
+    text-shadow: 2px 2px 5px black;
+}
+
+.innerdiv {
+    text-align: center;
+    width: min(800px,90%);
+    margin: auto;
+    margin-top: 50px;
+}
+input{
+    margin-left:20px;
+}
+.leftinnerdiv {
+    float: left;
+    width: 25%;
+}
+
+.rightinnerdiv {
+    float: right;
+    width: 75%;
+    /* border: 2px solid red; */
+}
+
+.innerright {
+    background-color: rgba(255, 255, 255, 0.308);
+}
+
+.greenbtn {
+    background-color: #2f7bda;
+    color: white;
+    width: 95%;
+    height: 40px;
+    margin-top: 8px;
+    border: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.greenbtn:hover,.greenbtn:focus{
+    background-color: #033674;
+} 
+
+.greenbtn,a {
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+
+th{
+    background-color: orange;
+    color: black;
+}
+td{
+    background-color: #fed8b1;
+    color: black;
+}
+td, a{
+    color:black;
+}
+
+/* ====================== NEW CSS */
+.bg{
+    position: absolute;
+    height: 100vh;
+    z-index: -1;
+    width: 100%;
+    position: fixed;
+}
+.logoutBtn{
+    /* border: 1px solid; */
+    padding: 5px;
+    display: flex;
+    justify-content: end;
+}
+.logoutBtn > a {
+    /* border: 1px solid; */
+    padding: 10px 0px;
+}
+.logoutBtn > a > button{
+    border: none;
+    padding: 5px;
+}
+.info_other_acc{
+    /* border: 1px solid; */
+    /* padding: 20px; */
+    /* width: fit-content; */
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.info_other_acc > div:nth-child(1) > div{
+    /* border: 1px solid; */
+    text-align: left;
+}
+.info_other_acc > div:nth-child(1) > div > p{
+    color: black;
+    margin: 20px;
+    text-transform: capitalize;
+}
+.info_other_acc > div:nth-child(2) img{
+    width: 200px;
+    margin: 20px;
+}
