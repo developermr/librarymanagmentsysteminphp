@@ -16,9 +16,19 @@
         <!-- <link rel="stylesheet" href="style.css"> -->
     </head>
     <style>
-        .innerright,label {
-    color: rgb(16, 170, 16);
-    font-weight:bold;
+        html{
+            /* background-image: url(images/bg.png); */
+        }
+        body{
+            /* background-color: blue; */
+            background-image: url(images/bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+.innerright,
+label {
+color: #1a1a1a;
+font-weight:bold;
 }
 .container,
 .row,
@@ -45,11 +55,11 @@ input{
 }
 
 .innerright {
-    background-color: rgb(105, 221, 105);
+    background-color: #b5cbe2;
 }
 
 .greenbtn {
-    background-color: rgb(16, 170, 16);
+    background-color: #3887ea;
     color: white;
     width: 95%;
     height: 40px;
@@ -75,7 +85,7 @@ td, a{
     color:black;
 }
     </style>
-    <body>
+<body>
 
     <?php
    include("data_class.php");
@@ -99,7 +109,7 @@ elseif($msg=="fail"){
 
         <div class="container">
         <div class="innerdiv">
-            <div class="row"><img class="imglogo" src="images/logo.png"/></div>
+        <a href="index.php"><Button class="greenbtn" > LOGOUT</Button></a>
             <div class="leftinnerdiv">
                 <Button class="greenbtn"> ADMIN</Button>
                 <Button class="greenbtn" onclick="openpart('addbook')" >ADD BOOK</Button>
@@ -109,7 +119,6 @@ elseif($msg=="fail"){
                 <Button class="greenbtn" onclick="openpart('studentrecord')"> STUDENT REPORT</Button>
                 <Button class="greenbtn"  onclick="openpart('issuebook')"> ISSUE BOOK</Button>
                 <Button class="greenbtn" onclick="openpart('issuebookreport')"> ISSUE REPORT</Button>
-                <a href="index.php"><Button class="greenbtn" > LOGOUT</Button></a>
             </div>
 
             <div class="rightinnerdiv">   
