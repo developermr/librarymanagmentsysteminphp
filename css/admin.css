@@ -62,12 +62,18 @@ form *{
 form label{
     font-size: 18px;
 }
-form input{
+/* form input{
     width: 70%;
-}   
+} */
+/* form input[type="text"], form input[type="number"]{
+    float: right;
+}    */
 form input[type="radio"], form input[type="submit"]{
     width: unset;
 }
+/* form input[type="radio"]{
+    margin-left: unset;
+} */
 form input[type="submit"]{
     background-color: #03c04a;
     border: none;
@@ -88,6 +94,29 @@ form select{
     background-color: rgba(255, 255, 255, 0.308);
 }
 
+/* ADD STUDENT FORM CSS */
+#addperson > form{
+    text-align: center;
+}
+#addperson > form > input{
+    width: 50%;
+}
+#addperson > form > input[type="password"]{
+    width: 45.5%;
+}
+#addperson > form > input[type="submit"]{
+    width: unset;
+    margin-left: unset;
+}
+
+/* ISSUE BOOK FORM */
+#issuebook > form{
+    text-align: center;
+}
+#issuebook > form > input[type="submit"]{
+    width: unset;
+    margin-left: unset;
+}
 
 .greenbtn {
     background-color: #2f7bda;
@@ -141,16 +170,37 @@ td{
     background-color: #68a3ed;;
     color: #1a1a1a;
     padding-block: 7px;
+    text-transform: capitalize;
 }
 td, a{
     color: #1a1a1a;
 }
 tr{
     margin-bottom: 20px;
+    text-transform: capitalize;
 }
 .btn{
     background-color: #033674;
     color: white;
     border: none;
     padding: 10px 15px;
+}
+
+.input1{
+    width: 72.7%;
+}
+.input2{
+    width: 70%;
+}
+.input3{
+    width: 78%;
+}
+.textarea{
+    width: 84.9%;
+}
+.input4{
+    width: 86.5%;
+}
+.input5{
+    width: 80.7%;
 }

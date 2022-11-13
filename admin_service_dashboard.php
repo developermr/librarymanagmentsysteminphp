@@ -84,14 +84,14 @@
                     <div id="addbook" class="innerright portion" style="<?php  if(!empty($_REQUEST['viewid'])){ echo "display:none";} else {echo ""; }?>">
                     <Button class="greenbtn content-title" style="margin-bottom: 40px;">ADD NEW BOOK</Button>
                     <form action="addbookserver_page.php" method="post" enctype="multipart/form-data">
-                    <label>Name of Book:</label><input type="text" name="bookname"/></br>
-                    <label>Name of Author:</label><input type="text" name="bookaudor"/></br>
-                    <label>Publication</label><input type="text" name="bookpub"/></br>
+                    <label>Name of Book:</label><input class="input1" type="text" name="bookname"/></br>
+                    <label>Name of Author:</label><input class="input2" type="text" name="bookaudor"/></br>
+                    <label>Publication</label><input class="input3" type="text" name="bookpub"/></br>
                     <label>Detail:</label><input class="textarea"  type="text" name="bookdetail"/></br>
                     <div>Branch:<input type="radio" name="branch" value="other"/>other<input type="radio" name="branch" value="BSIT"/>BSIT<div style="margin-left:80px"><input type="radio" name="branch" value="BSCS"/>BSCS<input type="radio" name="branch" value="BSSE"/>BSSE</div>
                     </div>
-                    <label>Price:</label><input  type="number" name="bookprice"/></br>
-                    <label>Quantity:</label><input type="number" name="bookquantity"/></br>
+                    <label>Price:</label><input class="input4" type="number" name="bookprice"/></br>
+                    <label>Quantity:</label><input class="input5" type="number" name="bookquantity"/></br>
                     <label>Book Cover Photo</label><br><input  type="file" name="bookphoto"/></br>
                     </br>
                     <input type="submit" value="SUBMIT"/>
@@ -106,7 +106,7 @@
                     <form action="addpersonserver_page.php" method="post" enctype="multipart/form-data">
                     <label>Name:</label><input type="text" name="addname"/>
                     </br>
-                    <label>Pasword:</label><input type="pasword" name="addpass"/>
+                    <label>Pasword:</label><input type="password" name="addpass"/>
                     </br>
                     <label>Email:</label><input  type="email" name="addemail"/></br>
                     <label for="typw">Choose type:</label>
@@ -179,7 +179,7 @@
     issue book -->
                 <div class="rightinnerdiv">   
                 <div id="issuebook" class="innerright portion" style="display:none">
-                <Button class="greenbtn content-title" >ISSUE BOOK</Button>
+                <Button class="greenbtn content-title" >ISSUE BOOK</Button><br><br>
                 <form action="issuebook_server.php" method="post" enctype="multipart/form-data">
                 <label for="book">Choose Book:</label>
                 <select name="book" >
@@ -196,7 +196,7 @@
                 ?>
                 </select>
 
-                <label for="Select Student">:</label>
+                <label for="userselect">Select Student:</label>
                 <select name="userselect" >
                 <?php
                 $u=new data;
@@ -209,7 +209,7 @@
                 }            
                 ?>
                 </select>
-    <br>
+    <br><br>
                 Days<input type="number" name="days"/>
                 <br><br>
 
@@ -221,7 +221,7 @@
                 <div class="rightinnerdiv">   
                 <div id="bookdetail" class="innerright portion" style="<?php  if(!empty($_REQUEST['viewid'])){ $viewid=$_REQUEST['viewid'];} else {echo "display:none"; }?>">
                 
-                <Button class="greenbtn" >BOOK DETAIL</Button>
+                <Button class="greenbtn content-title" >BOOK DETAIL</Button>
     </br>
     <?php
                 $u=new data;
@@ -230,7 +230,7 @@
                 $recordset=$u->getbookdetail($viewid);
                 foreach($recordset as $row){
 
-                    $bookid= $row[0];
+                $bookid= $row[0];
                 $bookimg= $row[1];
                 $bookname= $row[2];
                 $bookdetail= $row[3];
@@ -245,16 +245,21 @@
                 }            
     ?>
 
-                <img width='150px' height='150px' style='border:1px solid #333333; float:left;margin-left:20px' src="uploads/<?php echo $bookimg?> "/>
-                </br>
-                <p style="color:black"><u>Book Name:</u> &nbsp&nbsp<?php echo $bookname ?></p>
-                <p style="color:black"><u>Book Detail:</u> &nbsp&nbsp<?php echo $bookdetail ?></p>
-                <p style="color:black"><u>Book Authour:</u> &nbsp&nbsp<?php echo $bookauthour ?></p>
-                <p style="color:black"><u>Book Publisher:</u> &nbsp&nbsp<?php echo $bookpub ?></p>
-                <p style="color:black"><u>Book Branch:</u> &nbsp&nbsp<?php echo $branch ?></p>
-                <p style="color:black"><u>Book Price:</u> &nbsp&nbsp<?php echo $bookprice ?></p>
-                <p style="color:black"><u>Book Available:</u> &nbsp&nbsp<?php echo $bookava ?></p>
-                <p style="color:black"><u>Book Rent:</u> &nbsp&nbsp<?php echo $bookrent ?></p>
+                <div class="book-detail-container" style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+                    <div>
+                        <img width='250px' height='auto' src="uploads/<?php echo $bookimg?> "/>
+                    </div>
+                    <div class="book-details">
+                        <p style="color:black"><u>Name of Book:</u> &nbsp&nbsp<?php echo $bookname ?></p>
+                        <p style="color:black"><u>Name of Author:</u> &nbsp&nbsp<?php echo $bookauthour ?></p>
+                        <p style="color:black"><u>Date of Published:</u> &nbsp&nbsp<?php echo $bookpub ?></p>
+                        <p style="color:black"><u>Book Detail:</u> &nbsp&nbsp<?php echo $bookdetail ?></p>
+                        <p style="color:black"><u>Book Branch:</u> &nbsp&nbsp<?php echo $branch ?></p>
+                        <p style="color:black"><u>Book Price:</u> &nbsp&nbsp<?php echo $bookprice ?></p>
+                        <p style="color:black"><u>Book Available:</u> &nbsp&nbsp<?php echo $bookava ?></p>
+                        <p style="color:black"><u>Book Rent:</u> &nbsp&nbsp<?php echo $bookrent ?></p>
+                    </div>
+                </div>
 
 
                 </div>
