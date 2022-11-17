@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    text-align: center;
+    background: linear-gradient(to top left, blue,white);
+    min-height: 100vh;
+}
+.container{
+    /* border: 1px solid; */
+    margin: auto;
+    margin-top: 20vh;
+    width: min(600px,100%);
+    background-color: rgba(0, 0, 0, 0.699);
+    padding: 20px;
+}
+.row{
+    /* border: 1px solid red; */
+    width: fit-content;
+    margin: auto;
+}
+.row > h2{
+    color: rgb(247, 247, 247);
+    letter-spacing: 2px;
+}
+.login_btn_wrapper{
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* margin: 30px 0px; */
+}
+.login_btn_wrapper > button{
+    border: none;
+    border: 2px solid rgba(255, 255, 255, 0);
+    background: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 7px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    transition: 0.5s;
+}
+.login_btn_wrapper > button:hover{
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+.login_btn_wrapper .activeBtn{
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+.error_msg{
+    /* color: red; */
+    text-transform: uppercase;
+    animation-name: error;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes error{
+    0% {
+        color: red;
+    }
+    50%{
+        color: black;
+    }
+    100% {
+        color: red;
+    }
+}
+/* ==============student_form */
+.student_form form{
+    /* border: 1px solid; */
+    width: 400px;
+    margin: auto;
+    /* display: none; */
+}
+.student_form form input{
+    padding: 10px 5px;
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: 10px;
+}
+.student_form form .btnSubmit{
+    width: 100px ;
+    border-radius: 20px;
+    background-color: #56F40B;
+    padding: 7px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+.student_form a{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+/*====================== admin_form */
+.admin_form{
+    display: none;
+}
+.admin_form form{
+    width: 400px;
+    margin: auto;
+    /* display: none; */
+}
+.admin_form form input{
+    padding: 10px 5px;
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: 10px;
+}
+.admin_form form .btnSubmit{
+    width: 100px ;
+    border-radius: 20px;
+    background-color: #56F40B;
+    padding: 7px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
