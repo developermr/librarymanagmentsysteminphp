@@ -39,9 +39,11 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
 
                 $id= $row[0];
                 $name= $row[1];
-                $email= $row[2];
-                $pass= $row[3];
-                $type= $row[4];
+                $grade= $row[2];
+                $email= $row[3];
+                $pass= $row[4];
+                $type= $row[5];
+                $gender= $row[6];
                 } 
     ?>
         <div class="container">
@@ -66,8 +68,11 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
                     <div>
                         <div>
                             <p>Person Name: <u><?php echo $name ?></p></u>
+                            <p>Person Grade: <u><?php echo $grade ?></p></u>
                             <p>Person Email: <u><?php echo $email ?></u></p>
+                            <p>Person Password: <u><?php echo $pass ?></u></p>
                             <p>Account Type: <u><?php echo $type ?></u></p>
+                            <p>Gender: <u><?php echo $gender ?></u></p>
                         </div>
                     </div>
                     <div>

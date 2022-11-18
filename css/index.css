@@ -15,6 +15,7 @@ body{
     width: min(600px,100%);
     background-color: rgba(0, 0, 0, 0.699);
     padding: 20px;
+    border-radius: 20px;
 }
 .row{
     /* border: 1px solid red; */

@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    text-align: center;
+    background: linear-gradient(to top left, blue,white);
+    min-height: 100vh;
+}
+.container{
+    /* border: 1px solid; */
+    width: 600px;
+    margin:auto;
+    margin-top:15vh;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.61);
+    border-radius: 20px;
+}
+.container h1{
+    color: white;
+    letter-spacing: 2px;
+}
+.container label{
+    color: white;
+    font-weight: bold;
+}
+form{
+    /* border: 1px solid; */
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+form input{
+    padding: 10px;
+    margin: 20px 0px;
+    border: none;
+    width: 90%;
+    outline: none;
+}
+::placeholder {
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 12px;
+}
+form select{
+    padding: 10px;
+    outline: none;
+}
+form > .signinBtn{
+    margin-top: 50px;
+    width: 150px;
+    background-color: #56F40B;
+    border-radius: 20px;
+    border: none;
+    font-weight: bolder;
+    font-size: 15px;
+}
+.container p{
+    color: rgb(192, 192, 192);
+}
+.container p a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+}

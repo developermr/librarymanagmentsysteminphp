@@ -28,21 +28,24 @@ class data extends db {
     }
 
 
-    function addnewuser($name,$pasword,$email,$type){
+    function addnewuser($name,$grade,$pasword,$email,$type,$gender){
         $this->name=$name;
+        $this->grade=$grade;
         $this->pasword=$pasword;
         $this->email=$email;
         $this->type=$type;
+        $this->gender=$gender;
 
 
-         $q="INSERT INTO userdata(id, name, email, pass,type)VALUES('','$name','$email','$pasword','$type')";
+        //  $q="INSERT INTO userdata(id, name, email, pass,type)VALUES('','$name','$email','$pasword','$type')";
+        $q = "INSERT INTO `userdata`(`name`, `grade`, `email`, `pass`, `type`, `gender`) VALUES ('$name','$grade','$email','$pasword','$type','$gender')";
 
         if($this->connection->exec($q)) {
-            header("Location:admin_service_dashboard.php?msg=New Add done");
+            header("Location:create_acc.php?msg=New Add done");
         }
 
         else {
-            header("Location:admin_service_dashboard.php?msg=Register Fail");
+            header("Location:create_acc.php?msg=Register Fail");
         }
 
 

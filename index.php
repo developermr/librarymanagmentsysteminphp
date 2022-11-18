@@ -69,7 +69,7 @@ if(!empty($_REQUEST['msg'])){
 
                 <br>
 
-                <a href="">Sign up</a>
+                <a href="create_acc.php">Sign up</a>
             </form>
         </div>
 

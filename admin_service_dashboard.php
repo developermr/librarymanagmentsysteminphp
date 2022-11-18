@@ -45,7 +45,7 @@
                         <Button class="greenbtn" onclick="openpart('addbook')" >ADD BOOK</Button>
                         <Button class="greenbtn" onclick="openpart('bookreport')" > BOOK REPORT</Button>
                         <Button class="greenbtn" onclick="openpart('bookrequestapprove')"> BOOK REQUESTS</Button>
-                        <Button class="greenbtn" onclick="openpart('addperson')"> ADD STUDENT</Button>
+                        <!-- <Button class="greenbtn" onclick="openpart('addperson')"> ADD STUDENT</Button> -->
                         <Button class="greenbtn" onclick="openpart('studentrecord')"> STUDENT REPORT</Button>
                         <Button class="greenbtn"  onclick="openpart('issuebook')"> ISSUE BOOK</Button>
                         <Button class="greenbtn" onclick="openpart('issuebookreport')"> ISSUE REPORT</Button>
@@ -101,25 +101,6 @@
                     </div>
                     </div>
                     <div class="rightinnerdiv">
-                    <div id="addperson" class="innerright portion" style="display:none">
-                    <Button class="greenbtn content-title" >ADD Person</Button>
-                    <form action="addpersonserver_page.php" method="post" enctype="multipart/form-data">
-                    <label>Name:</label><input type="text" name="addname"/>
-                    </br>
-                    <label>Pasword:</label><input type="password" name="addpass"/>
-                    </br>
-                    <label>Email:</label><input  type="email" name="addemail"/></br>
-                    <label for="typw">Choose type:</label>
-                    <select name="type" >
-                        <option value="student">student</option>
-                        <option value="teacher">teacher</option>
-                    </select>
-                    <br><br>
-                    <input type="submit" value="SUBMIT"/>
-                    </form>
-                    </div>
-                    </div>
-                    <div class="rightinnerdiv">
                     <div id="studentrecord" class="innerright portion" style="display:none">
                     <Button class="greenbtn content-title" >Student RECORD</Button>
                     <?php
@@ -128,13 +109,17 @@
                     $u->userdata();
                     $recordset=$u->userdata();
                     $table="<table style='font-family: Arial, Helvetica, sans-serif;width: 100%;'><tr><th style=';
-                    padding: 8px;'> Name</th><th>Email</th><th>Type</th></tr>";
+                    padding: 8px;'> Name</th><th>Grade</th><th>Email</th><th>Password</th><th>type</th><th>gender</th></tr>";
                     foreach($recordset as $row){
                         $table.="<tr>";
                     "<td>$row[0]</td>";
                         $table.="<td>$row[1]</td>";
                         $table.="<td>$row[2]</td>";
+                        $table.="<td>$row[3]</td>";
                         $table.="<td>$row[4]</td>";
+                        $table.="<td>$row[5]</td>";
+                        $table.="<td>$row[6]</td>";
+                        // $table.="<td>$row[7]</td>";
                         // $table.="<td><a href='deleteuser.php?useriddelete=$row[0]'>Delete</a></td>";
                         $table.="</tr>";
                         // $table.=$row[0];
