@@ -2,9 +2,6 @@
 
 include("data_class.php");
 
-
-
-
 $request=$_GET['reqid'];
 $book=$_GET['book'];
 $userselect= $_GET['userselect'];

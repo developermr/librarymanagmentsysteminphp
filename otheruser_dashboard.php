@@ -44,6 +44,7 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
                 $pass= $row[4];
                 $type= $row[5];
                 $gender= $row[6];
+                $pic= $row[7];
                 } 
     ?>
         <div class="container">
@@ -76,7 +77,7 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
                         </div>
                     </div>
                     <div>
-                        <img src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="">
+                        <img src="<?php echo $pic ?>" alt="<?php echo $pic ?>">
                     </div>
                     
                 </div>

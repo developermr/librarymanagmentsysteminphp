@@ -11,6 +11,8 @@
     
     <body>
 
+    <img src="images/bg.png" alt="" class="bg_img_index">
+
 <?php
  $emailmsg="";
  $pasdmsg="";

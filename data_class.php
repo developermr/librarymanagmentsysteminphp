@@ -28,17 +28,22 @@ class data extends db {
     }
 
 
-    function addnewuser($name,$grade,$pasword,$email,$type,$gender){
+    function addnewuser($name,$grade,$pasword,$email,$type,$gender,$picName,$picTmpname){
         $this->name=$name;
         $this->grade=$grade;
         $this->pasword=$pasword;
         $this->email=$email;
         $this->type=$type;
         $this->gender=$gender;
+        $this->picName=$picName;
+        $this->picTmpname=$picTmpname;
 
+        $fileDestination = 'uploads/'.$picName;
+
+        move_uploaded_file($picTmpname,$fileDestination);
 
         //  $q="INSERT INTO userdata(id, name, email, pass,type)VALUES('','$name','$email','$pasword','$type')";
-        $q = "INSERT INTO `userdata`(`name`, `grade`, `email`, `pass`, `type`, `gender`) VALUES ('$name','$grade','$email','$pasword','$type','$gender')";
+        $q = "INSERT INTO `userdata`(`name`, `grade`, `email`, `pass`, `type`, `gender`,`picture`) VALUES ('$name','$grade','$email','$pasword','$type','$gender','$fileDestination')";
 
         if($this->connection->exec($q)) {
             header("Location:create_acc.php?msg=New Add done");
@@ -51,6 +56,7 @@ class data extends db {
 
 
     }
+
     function userLogin($t1, $t2) {
         $q="SELECT * FROM userdata where email='$t1' and pass='$t2'";
         $recordSet=$this->connection->query($q);
@@ -91,17 +97,16 @@ class data extends db {
 
 
 
-    function addbook($bookpic, $bookname, $bookdetail, $bookaudor, $bookpub, $branch, $bookprice, $bookquantity) {
+    function addbook($bookpic, $bookname, $bookdetail, $bookaudor, $bookpub, $branch, $bookquantity) {
         $this->$bookpic=$bookpic;
         $this->bookname=$bookname;
         $this->bookdetail=$bookdetail;
         $this->bookaudor=$bookaudor;
         $this->bookpub=$bookpub;
         $this->branch=$branch;
-        $this->bookprice=$bookprice;
         $this->bookquantity=$bookquantity;
 
-       $q="INSERT INTO book (id,bookpic,bookname, bookdetail, bookaudor, bookpub, branch, bookprice,bookquantity,bookava,bookrent)VALUES('','$bookpic', '$bookname', '$bookdetail', '$bookaudor', '$bookpub', '$branch', '$bookprice', '$bookquantity','$bookquantity',0)";
+       $q="INSERT INTO book (id,bookpic,bookname, bookdetail, bookaudor, bookpub, branch,bookquantity,bookava,bookrent)VALUES('','$bookpic', '$bookname', '$bookdetail', '$bookaudor', '$bookpub', '$branch', '$bookquantity','$bookquantity',0)";
 
         if($this->connection->exec($q)) {
             header("Location:admin_service_dashboard.php?msg=done");

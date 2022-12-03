@@ -46,7 +46,7 @@
                         <Button class="greenbtn" onclick="openpart('bookreport')" > BOOK REPORT</Button>
                         <Button class="greenbtn" onclick="openpart('bookrequestapprove')"> BOOK REQUESTS</Button>
                         <!-- <Button class="greenbtn" onclick="openpart('addperson')"> ADD STUDENT</Button> -->
-                        <Button class="greenbtn" onclick="openpart('studentrecord')"> STUDENT REPORT</Button>
+                        <Button class="greenbtn" onclick="openpart('studentrecord')">USER REPORT</Button>
                         <Button class="greenbtn"  onclick="openpart('issuebook')"> ISSUE BOOK</Button>
                         <Button class="greenbtn" onclick="openpart('issuebookreport')"> ISSUE REPORT</Button>
                     </div>
@@ -90,7 +90,7 @@
                     <label>Detail:</label><input class="textarea"  type="text" name="bookdetail"/></br>
                     <div>Branch:<input type="radio" name="branch" value="other"/>other<input type="radio" name="branch" value="BSIT"/>BSIT<div style="margin-left:80px"><input type="radio" name="branch" value="BSCS"/>BSCS<input type="radio" name="branch" value="BSSE"/>BSSE</div>
                     </div>
-                    <label>Price:</label><input class="input4" type="number" name="bookprice"/></br>
+                    <!-- <label>Price:</label><input class="input4" type="number" name="bookprice"/></br> -->
                     <label>Quantity:</label><input class="input5" type="number" name="bookquantity"/></br>
                     <label>Book Cover Photo</label><br><input  type="file" name="bookphoto"/></br>
                     </br>
@@ -102,7 +102,7 @@
                     </div>
                     <div class="rightinnerdiv">
                     <div id="studentrecord" class="innerright portion" style="display:none">
-                    <Button class="greenbtn content-title" >Student RECORD</Button>
+                    <Button class="greenbtn content-title" >USER REPORT</Button>
                     <?php
                     $u=new data;
                     $u->setconnection();
@@ -222,10 +222,10 @@
                 $bookauthour= $row[4];
                 $bookpub= $row[5];
                 $branch= $row[6];
-                $bookprice= $row[7];
-                $bookquantity= $row[8];
-                $bookava= $row[9];
-                $bookrent= $row[10];
+                // $bookprice= $row[7];
+                $bookquantity= $row[7];
+                $bookava= $row[8];
+                $bookrent= $row[9];
 
                 }            
     ?>
@@ -240,9 +240,9 @@
                         <p style="color:black"><u>Date of Published:</u> &nbsp&nbsp<?php echo $bookpub ?></p>
                         <p style="color:black"><u>Book Detail:</u> &nbsp&nbsp<?php echo $bookdetail ?></p>
                         <p style="color:black"><u>Book Branch:</u> &nbsp&nbsp<?php echo $branch ?></p>
-                        <p style="color:black"><u>Book Price:</u> &nbsp&nbsp<?php echo $bookprice ?></p>
+                        <!-- <p style="color:black"><u>Book Price:</u> &nbsp&nbsp<?php echo $bookprice ?></p> -->
                         <p style="color:black"><u>Book Available:</u> &nbsp&nbsp<?php echo $bookava ?></p>
-                        <p style="color:black"><u>Book Rent:</u> &nbsp&nbsp<?php echo $bookrent ?></p>
+
                     </div>
                 </div>
 
@@ -261,7 +261,7 @@
                 $u->getbook();
                 $recordset=$u->getbook();
 
-                $table="<table style=' text-align: center; font-family: Arial, Helvetica, sans-serif;width: 100%;'><tr><th style='padding: 8px;'>Book Name</th><th>Price</th><th>Qnt</th><th>Available</th><th>Rent</th></th><th>View</th></tr>";
+                $table="<table style=' text-align: center; font-family: Arial, Helvetica, sans-serif;width: 100%;'><tr><th style='padding: 8px;'>Book Name</th><th>Qnt</th><th>Available</th><th>Rent</th></th><th>View</th></tr>";
                 foreach($recordset as $row){
                     $table.="<tr>";
                 "<td>$row[0]</td>";
@@ -269,7 +269,7 @@
                     $table.="<td>$row[7]</td>";
                     $table.="<td>$row[8]</td>";
                     $table.="<td>$row[9]</td>";
-                    $table.="<td>$row[10]</td>";
+                    // $table.="<td>$row[10]</td>";
                     $table.="<td><a href='admin_service_dashboard.php?viewid=$row[0]'><button type='button' class='btn btn-primary'>View Book</button></a></td>";
                     // $table.="<td><a href='deletebook_dashboard.php?deletebookid=$row[0]'>Delete</a></td>";
                     $table.="</tr>";

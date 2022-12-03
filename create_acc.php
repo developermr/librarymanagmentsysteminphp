@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/create_acc.css">
 </head>
 <body>
+    <img src="images/bg.png" alt="" class="bg_img_index">
+
     <div class="container">
         <h1>Create account</h1>
         <form action="addpersonserver_page.php" method="post" enctype="multipart/form-data">
@@ -42,6 +44,7 @@
                 <option value="TEACHER">TEACHER</option>
             </select>
 
+            <input type="file" name="picture">
 
             <br>
             <input class="signinBtn" type="submit" value="Sign Up"/>
