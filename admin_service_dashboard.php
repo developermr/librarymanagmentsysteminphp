@@ -243,6 +243,7 @@
                         <!-- <p style="color:black"><u>Book Price:</u> &nbsp&nbsp<?php echo $bookprice ?></p> -->
                         <p style="color:black"><u>Book Available:</u> &nbsp&nbsp<?php echo $bookava ?></p>
 
+                        <a href="edit_book.php?id=<?php echo $bookid ?>">EDIT</a>
                     </div>
                 </div>
 
