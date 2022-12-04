@@ -243,7 +243,7 @@
                         <!-- <p style="color:black"><u>Book Price:</u> &nbsp&nbsp<?php echo $bookprice ?></p> -->
                         <p style="color:black"><u>Book Available:</u> &nbsp&nbsp<?php echo $bookava ?></p>
 
-                        <a href="edit_book.php?id=<?php echo $bookid ?>">EDIT</a>
+                        <a href="edit_book.php?id=<?php echo $bookid ?>" target="iframe" id='edit_book_btn'>EDIT</a>
                     </div>
                 </div>
 
@@ -289,6 +289,7 @@
             </div>
             </div>
             
+            <iframe class="iframe_edit_book" name='iframe'></iframe>
 
         
             <script>
@@ -300,6 +301,13 @@
             }
             document.getElementById(portion).style.display = "block";  
             }
+
+            const editBtn = document.querySelector('#edit_book_btn');
+            const iframe_edit_book = document.querySelector('.iframe_edit_book')
+
+            editBtn.addEventListener('click',function(){
+                iframe_edit_book.style.display = 'block';
+            })
             </script>
         </body>
 </html>

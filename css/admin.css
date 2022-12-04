@@ -204,3 +204,19 @@ tr{
 .input5{
     width: 80.7%;
 }
+
+
+/*================= iframe_edit_book */
+.iframe_edit_book{
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    background: white;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20vh;
+    inset: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}

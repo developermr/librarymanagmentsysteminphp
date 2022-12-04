@@ -42,6 +42,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit book</title>
+    <style>
+        body{
+            background:white
+        }
+    </style>
 </head>
 <body>
     <form method='post'>
@@ -64,7 +69,6 @@
         <input type="text" name='quantity' value="<?php echo $info['bookquantity'] ?>">
         <br><br>
         <button name="submit">SUBMIT</button>
-        <a href="admin_service_dashboard.php">BACK</a>
     </form>
 </body>
 </html>
