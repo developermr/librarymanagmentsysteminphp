@@ -148,7 +148,7 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
         $recordset=$u->getbookissue();
 
         $table="<table><tr>
-        <th>Image</th><th>Book Name</th><th>Book Authour</th><th>branch</th><th>price</th></th><th>Request Book</th></tr>";
+        <th>Image</th><th>Book Name</th><th>Book Authour</th><th>branch</th><th>Quantity</th></th><th>Request Book</th><th>Request Book</th></tr>";
 
         foreach($recordset as $row){
             $table.="<tr>";
@@ -158,6 +158,7 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
             $table.="<td>$row[4]</td>";
             $table.="<td>$row[6]</td>";
             $table.="<td>$row[7]</td>";
+            $table.="<td><a id='view_book_details_btn' href='view_book_other_user.php?id=$row[0]' target='iframe_view'>VIEW</a></td>";
             $table.="<td><a href='requestbook.php?bookid=$row[0]&userid=$userloginid'><button type='button' class='btn btn-primary'>Request Book</button></a></td>";
         
             $table.="</tr>";
@@ -175,6 +176,10 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
 
     </div>
     </div>
+    <div class="view_details_book_wrapper">
+        <div><span id='closeBtn_book_details'>X</span></div>
+        <iframe name='iframe_view' class="iframe_view_book_details"></iframe>
+    </div>
 
 
     <script>
@@ -186,6 +191,22 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
     }
     document.getElementById(portion).style.display = "block";  
     }
+
+    const viewBookBtn = document.querySelectorAll('#view_book_details_btn');
+    const iframeWrapper = document.querySelector('.view_details_book_wrapper');
+
+    const closeIframe = document.querySelector('#closeBtn_book_details');
+
+    viewBookBtn.forEach(btn=>{
+        btn.addEventListener('click',function(){
+            iframeWrapper.style.display = 'block';
+        })
+    })
+
+    closeIframe.addEventListener('click',function(){
+        iframeWrapper.style.display = 'none';
+    })
+
 
 
 

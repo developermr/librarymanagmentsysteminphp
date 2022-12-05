@@ -167,3 +167,39 @@ table button {
 table button:hover{
     background-color: #033674;
 }
+.view_details_book_wrapper{
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    inset: 0;
+    margin: 0 auto;
+    margin-top: 40vh;
+    position: fixed;
+    display: none;
+}
+.view_details_book_wrapper div{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.view_details_book_wrapper div > span{
+    padding: 10px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.767);
+    cursor: pointer;
+}
+.iframe_view_book_details{
+    width: 200px;
+    height: 250px;
+    border: none;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px;
+}
