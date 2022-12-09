@@ -148,7 +148,7 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
         $recordset=$u->getbookissue();
 
         $table="<table><tr>
-        <th>Image</th><th>Book Name</th><th>Book Authour</th><th>branch</th><th>Quantity</th></th><th>Request Book</th><th>Request Book</th></tr>";
+        <th>Image</th><th>Book Name</th><th>Book Authour</th><th>branch</th><th>Quantity</th></th><th>View Book</th><th>Request Book</th></tr>";
 
         foreach($recordset as $row){
             $table.="<tr>";
@@ -176,9 +176,9 @@ $userloginid=$_SESSION["userid"] = $_GET['userlogid'];
 
     </div>
     </div>
-    <div class="view_details_book_wrapper">
+    <div  class="view_details_book_wrapper">
         <div><span id='closeBtn_book_details'>X</span></div>
-        <iframe name='iframe_view' class="iframe_view_book_details"></iframe>
+        <iframe style="width: 300px; height: 350px" name='iframe_view' class="iframe_view_book_details"></iframe>
     </div>
 
 

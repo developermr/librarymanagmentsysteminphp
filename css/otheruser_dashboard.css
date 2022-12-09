@@ -64,7 +64,7 @@ input{
     background-color: #033674;
 } 
 
-.greenbtn,a {
+.greenbtn, a {
     text-decoration: none;
     color: white;
     font-size: large;
@@ -153,8 +153,13 @@ table td img{
     margin: 10px;
     border-radius: 10px;
 }
+table a{
+    color:#033674;
+    font-size: 16px;
+    font-weight: 700;
+}
 
-table button {
+table button{
     border: none;
     background-color: rgb(15, 111, 189);
     color: white;
@@ -196,8 +201,8 @@ table button:hover{
     cursor: pointer;
 }
 .iframe_view_book_details{
-    width: 200px;
-    height: 250px;
+    min-width: 300px;
+    height: 450px;
     border: none;
     background-color: white;
     border-radius: 20px;

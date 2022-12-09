@@ -243,7 +243,7 @@
                         <!-- <p style="color:black"><u>Book Price:</u> &nbsp&nbsp<?php echo $bookprice ?></p> -->
                         <p style="color:black"><u>Book Available:</u> &nbsp&nbsp<?php echo $bookava ?></p>
 
-                        <a href="edit_book.php?id=<?php echo $bookid ?>" target="iframe" id='edit_book_btn'>EDIT</a>
+                        <a style='color: blue;' href="edit_book.php?id=<?php echo $bookid ?>" target="iframe" id='edit_book_btn'>EDIT</a><br><br>
                     </div>
                 </div>
 
@@ -288,8 +288,11 @@
 
             </div>
             </div>
-            
-            <iframe class="iframe_edit_book" name='iframe'></iframe>
+
+            <div class="edit_book_wrapper">
+                <span id='closeBtn_edit_book'>X</span>
+                <iframe class="iframe_edit_book" name='iframe' id="someid"></iframe>
+            </div>
 
         
             <script>
@@ -303,11 +306,17 @@
             }
 
             const editBtn = document.querySelector('#edit_book_btn');
-            const iframe_edit_book = document.querySelector('.iframe_edit_book')
+            const edit_book_wrapper = document.querySelector('.edit_book_wrapper');
+            const closeBtn_edit_book = document.querySelector('#closeBtn_edit_book');
 
             editBtn.addEventListener('click',function(){
-                iframe_edit_book.style.display = 'block';
+                edit_book_wrapper.style.display = 'block';
             })
+
+            closeBtn_edit_book.addEventListener('click',function(){
+                edit_book_wrapper.style.display = 'none'
+                window.location.reload();
+            });
             </script>
         </body>
 </html>

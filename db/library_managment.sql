@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2021 at 05:28 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Generation Time: Dec 09, 2022 at 02:29 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `email`, `pass`) VALUES
-(1, 'idno22381@gmail.com', '123');
+(1, '2', '2');
 
 -- --------------------------------------------------------
 
@@ -54,7 +54,6 @@ CREATE TABLE `book` (
   `bookaudor` varchar(25) NOT NULL,
   `bookpub` varchar(25) NOT NULL,
   `branch` varchar(110) NOT NULL,
-  `bookprice` varchar(25) NOT NULL,
   `bookquantity` varchar(25) NOT NULL,
   `bookava` int(11) NOT NULL,
   `bookrent` int(11) NOT NULL
@@ -64,10 +63,12 @@ CREATE TABLE `book` (
 -- Dumping data for table `book`
 --
 
-INSERT INTO `book` (`id`, `bookpic`, `bookname`, `bookdetail`, `bookaudor`, `bookpub`, `branch`, `bookprice`, `bookquantity`, `bookava`, `bookrent`) VALUES
-(4, 'arrow.jpg', 'Scott Gallagher', '1st edition', 'no idea', 'Suscipit', 'it', '756', '20', 16, 4),
-(5, 'logo.png', 'Ferris Mclaughlin', 'Qui ex dolor fugiat ', 'Est voluptates offi', 'Dolorem earum accusa', 'electrical', '264', '157', 157, 0),
-(6, 'arrow.png', 'harry', 'Ea quas nulla ration', 'Ut dolorem culpa ex', 'Eum proident quidem', 'it', '76', '3', 2, 1);
+INSERT INTO `book` (`id`, `bookpic`, `bookname`, `bookdetail`, `bookaudor`, `bookpub`, `branch`, `bookquantity`, `bookava`, `bookrent`) VALUES
+(8, 'gorickyourself.png', 'a', 'a', 'a', 'a', 'a', 'a', 20, 1),
+(10, '214-2146391_web-developme', 'sample1', 'sampkle', 'sample1', '2022', 'BSSE', '23', 23, 0),
+(11, 'logo.jpg', 'password', 'fwefeaw', 'password', 'ewafewa', 'BSIT', '3', 3, 0),
+(12, 'pickle-laughing.gif', 'among us', '13412321', 'among us', '32432', 'BSSE', '40', 40, 0),
+(13, 'Mc1.webp', 'paano maging pogi', 'pagoid kana ba maging panget', 'john gaita', '2022', 'other', '1000', 997, 3);
 
 -- --------------------------------------------------------
 
@@ -92,12 +93,9 @@ CREATE TABLE `issuebook` (
 --
 
 INSERT INTO `issuebook` (`id`, `userid`, `issuename`, `issuebook`, `issuetype`, `issuedays`, `issuedate`, `issuereturn`, `fine`) VALUES
-(2, 1, 'salman', 'Rich daddy poor dady', 'student', 3, '30/03/2021', '02/04/2021', 1800),
-(3, 2, 'Randall Burch', 'Scott Gallagher', 'teacher', 4, '30/03/2021', '03/04/2021', 0),
-(6, 1, 'salman', 'Scott Gallagher', 'student', 7, '30/03/2021', '06/04/2021', 1800),
-(9, 5, 'salmannew', 'Scott Gallagher', 'teacher', 21, '30/03/2021', '20/04/2021', 0),
-(10, 1, 'salman', 'Scott Gallagher', 'student', 7, '01/04/2021', '08/04/2021', 0),
-(11, 1, 'salman', 'harry', 'student', 7, '01/04/2021', '08/04/2021', 0);
+(26, 10, 'renz collin', 'paano maging pogi', 'STUDENT', 0, '03/12/2022', '01/01/1970', 0),
+(27, 11, 'iori yagami', 'paano maging pogi', 'TEACHER', 999, '03/12/2022', '28/08/2025', 0),
+(28, 10, 'renz collin', 'paano maging pogi', 'STUDENT', 2, '03/12/2022', '05/12/2022', 0);
 
 -- --------------------------------------------------------
 
@@ -115,6 +113,13 @@ CREATE TABLE `requestbook` (
   `issuedays` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `requestbook`
+--
+
+INSERT INTO `requestbook` (`id`, `userid`, `bookid`, `username`, `usertype`, `bookname`, `issuedays`) VALUES
+(20, 10, 11, 'renz collin', 'STUDENT', 'password', '');
+
 -- --------------------------------------------------------
 
 --
@@ -124,20 +129,22 @@ CREATE TABLE `requestbook` (
 CREATE TABLE `userdata` (
   `id` int(11) NOT NULL,
   `name` varchar(25) NOT NULL,
+  `grade` varchar(250) NOT NULL,
   `email` varchar(25) NOT NULL,
   `pass` varchar(25) NOT NULL,
-  `type` varchar(25) NOT NULL
+  `type` varchar(25) NOT NULL,
+  `gender` varchar(250) NOT NULL,
+  `picture` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `userdata`
 --
 
-INSERT INTO `userdata` (`id`, `name`, `email`, `pass`, `type`) VALUES
-(1, 'salman', 'idno22382@gmail.com', '123', 'student'),
-(2, 'Randall Burch', 'voqo@mailinator.com', 'Ratione nulla dolore', 'teacher'),
-(3, 'Gabriel Daugherty', 'bipacer@mailinator.com', 'Voluptas explicabo ', 'teacher'),
-(5, 'salmannew', '1234@gmail.com', '123', 'teacher');
+INSERT INTO `userdata` (`id`, `name`, `grade`, `email`, `pass`, `type`, `gender`, `picture`) VALUES
+(9, 'among us', 'amonmg us', 'among@io', 'among', 'STUDENT', 'MALE', 'uploads/amongus.png'),
+(10, 'renz collin', 'BSIT 4A', 'renz@io', 'renz', 'STUDENT', 'MALE', 'uploads/309799604_645831623830900_1141024942553994830_n.jpg'),
+(11, 'iori yagami', 'king', 'king@io', 'king', 'TEACHER', 'MALE', 'uploads/logo_capstone.png');
 
 --
 -- Indexes for dumped tables
@@ -190,25 +197,25 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `issuebook`
 --
 ALTER TABLE `issuebook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `requestbook`
 --
 ALTER TABLE `requestbook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `userdata`
 --
 ALTER TABLE `userdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

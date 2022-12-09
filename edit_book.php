@@ -10,7 +10,6 @@
 
 
     $user_id = $_GET['id'];
-    echo $user_id;
 
     $command = "SELECT * FROM `book` WHERE id='$user_id'";
     $list = $con->query($command);
@@ -30,7 +29,7 @@
 
         $con->query($update);
 
-        header('location: admin_service_dashboard.php');
+        header('Refresh:0');
     }
 
 ?>
@@ -44,7 +43,32 @@
     <title>Edit book</title>
     <style>
         body{
-            background:white
+            background-color: #68a3ed;
+            color: #1a1a1a;
+            margin-inline: 15px;
+        }
+        form{
+            margin-top: 20px;
+        }
+        label{
+            font-size: 19px;
+            font-weight: bold;
+        }
+        input{
+            margin-block: 5px;
+            padding: 5px;
+            font-size: 16px;
+            color: #212121;
+        }
+        button{
+            margin-top: 10px;
+            padding: 10px 25px;
+            background-color: #033674;
+            color: white;
+            border: none;
+            letter-spacing: 2px;
+            display: block;
+            margin-inline: auto;
         }
     </style>
 </head>
@@ -70,5 +94,8 @@
         <br><br>
         <button name="submit">SUBMIT</button>
     </form>
+    <script>
+       
+    </script>
 </body>
 </html>

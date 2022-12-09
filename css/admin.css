@@ -207,16 +207,31 @@ tr{
 
 
 /*================= iframe_edit_book */
+.edit_book_wrapper{
+    position: absolute;
+    margin-top: 20vh;
+    inset: 0;
+    left: 40vw;
+    right: 40vw;
+    display: none;
+}
 .iframe_edit_book{
     width: 400px;
     height: 500px;
-    position: absolute;
-    background: white;
+    /* background: white; */
     border: none;
     border-radius: 20px;
-    margin-top: 20vh;
-    inset: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: none;
+}
+#closeBtn_edit_book{
+    display: flex;
+    justify-content: center;    
+    padding: 10px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.567);
+    cursor: pointer;
+    
 }

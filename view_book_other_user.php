@@ -25,16 +25,22 @@
     <title>View book</title>
     <style>
         body{
-            text-align:center
+            display: block;
+            margin: auto;
+            background-color: #2f7bda;
+            margin: 30px 20px;
         }
         table{
-            border-collapse:collapse;
+            margin-inline: auto;
         }
         td{
-            border: 1px solid;
-            text-align:center;
             margin:5px;
-            padding: 5px
+            padding: 5px;
+            font-size: 18px;
+            color: #ededed;
+        }
+        tr > td:nth-child(1){
+            font-weight: 700;
         }
     </style>
 </head>
@@ -42,7 +48,7 @@
     <table>
         <tr>
             <td>Book Name:</td>
-            <td><?php echo $info['bookname'] ?></td>
+            <td><?php echo $info['bookname'] ?> </td>
         </tr>
         <tr>
             <td>Book details:</td>
